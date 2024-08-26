@@ -95,6 +95,20 @@ body {
 }
 
 /*position & stuff*/
+.center-column-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.center-column-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .left-align-column {
   display: flex;
   justify-content: flex-start;
@@ -237,14 +251,25 @@ h1#welcome-text {
   height: 100vh;
 }
 
-#details-header {
-  transform: scale(0.5);
-}
-
 .third-header {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
+}
+
+#details-header {
+  transform: translateY(-650%);
+  transition: translate 0.5s ease-in-out 5s;
+}
+.details-info.center-column-row {
+  gap: 2vw;
+}
+
+.details-item {
+  width: 7vw;
+  height: 5vw;
+  border: 1px solid var(--background-dark);
 }
