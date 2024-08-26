@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ammar Arief</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="index-styles.css" />
+</head>
+
+<body>
+    <section class="first-section">
+        <div class="header">
+            <h1 id="welcome-text" class="dark-font">WELCOME</h1>
+        </div>
+    </section>
+    <section class="second-section">
+        <div class="second-parent">
+            <div class="second-first-child">
+                <div class="second-text left-align-column" id="second-text">
+                    <h3 class="light-font wfit-content">Hello! I'm <span class="jazmin">Ammar</span>.</h3>
+                    <h3 class="light-font wfit-content">I'm a front-end developer.</h3>
+                </div>
+                <div class="second-second-child">
+                  <div class="third-text right-align-column align-text-right" id="third-text">
+                    <h3 class="light-font">Well technically, </h3>
+                    <h3 class="light-font">I am still a student</h3>
+                  </div>
+                </div>
+            </div>
+    </section>
+    <section class="third-section">
+        <div class="details-div">
+            <h2 class="dark-font" id="details-header">ammar hot</h2>
+        </div>
+        <div class="third-header"></div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/smooth-scrollbar@8.6.3/dist/smooth-scrollbar.js"></script>
+    <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to("#welcome-text", {
+        x: "-400%",
+        scale: 60,
+        scrollTrigger: {
+            trigger: ".first-section",
+            start: "10%",
+            end: "30%",
+            scrub: 0.5,
+            toggleActions: "play reverse play reverse",
+        },
+    });
+
+    gsap.to(".second-section", {
+        backgroundImage: "url('srcs/2.png')",
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".second-second-child",
+            start: "1%",
+            end: "1.2%",
+            scrub: 0,
+            toggleActions: "play none none reverse",
+        },
+    });
+
+    gsap.to("#second-text", {
+      opacity: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".second-first-child",
+        start: "top 50%",
+        end: "bottom 70%",
+        scrub: 0.2,
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    gsap.to("#third-text", {
+      opacity: 1,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".second-second-child",
+        start: "top 50%",
+        end: "top 20%",
+        scrub: 2,
+        toggleActions: "play none none reverse",
+      },
+    });
+
+
+    gsap.to(".details-div", {
+        clipPath: "circle(50% at 50% 50%)",
+        scale: 2,
+        escape: true,
+        scrollTrigger: {
+            trigger: ".third-section",
+            start: "1%",
+            end: "10%",
+            scrub: 1,
+            markers: true,
+            toggleActions: "play reverse play reverse",
+        },
+    });
+
+    gsap.to("#details-header", {
+        scale: 1,
+        scrollTrigger: {
+            trigger: ".third-section",
+            start: "1%",
+            end: "10%",
+            scrub: 1,
+            markers: true,
+            toggleActions: "play reverse play reverse",
+        },
+    });
+    </script>
+</body>
+
+</html>
