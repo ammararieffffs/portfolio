@@ -17,17 +17,20 @@ body {
   --background-dark: #07090f;
   --font-light: #f4f3ee;
   --font-dark: #07090f;
+  --accent-color:#804E49;
   --side-padding-outer: 6.3542vw;
+  --side-padding-inner: 1.0417vw;
 }
 
 /*FONT & STUFF*/
 
 .jazmin {
   font-family: "jazmin";
+  font-style: italic;
 }
 
 .jakarta {
-  font-family: "jakarta";
+  font-family: "Plus Jakarta Sans" !important;
 }
 
 @font-face {
@@ -169,7 +172,7 @@ h1#welcome-text {
 
 /*second section*/
 .second-section {
-  height: 250vh;
+  height: 200vh;
   position: relative;
   z-index: 2;
   background-image: url(srcs/1.png);
@@ -184,7 +187,6 @@ h1#welcome-text {
   padding-inline: var(--side-padding-outer);  
   display: flex;
   flex-direction: column;
-  gap: 2vw;
 }
 
 .second-first-child {
@@ -216,7 +218,6 @@ h1#welcome-text {
 }
 
 .second-second-child {
-  padding-top: 50vh;
   height: 100vh;
 }
 
@@ -225,8 +226,13 @@ h1#welcome-text {
   top: 40%;
 }
 
+#second-text {
+  transform: translateX(-5000px);
+}
+
 #third-text {
   opacity: 0;
+  transform: translateX(500px);
 }
 
 /*third section*/
@@ -258,6 +264,7 @@ h1#welcome-text {
   align-items: center;
   flex-direction: column;
   height: 100vh;
+  top: 50vh;
 }
 
 #details-header {
@@ -265,11 +272,28 @@ h1#welcome-text {
   transition: translate 0.5s ease-in-out 5s;
 }
 .details-info.center-column-row {
-  gap: 2vw;
+  justify-content: space-between !important;
+}
+
+.details-info {
+  padding-inline: var(--side-padding-outer);
+}
+
+.details-parent {
+  display: flex;
+  flex-direction: row;
+  width: calc(90vw - var(--side-padding-outer));
+  justify-content: space-between;
+  align-items: center;
 }
 
 .details-item {
-  width: 7vw;
-  height: 5vw;
-  border: 1px solid var(--background-dark);
+  width: 60vw;
+  height: 20vw;
+  padding: var(--side-padding-inner);
+  border: 0.2604vw solid var(--background-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 2.3438vw;
 }
