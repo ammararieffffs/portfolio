@@ -1,299 +1,193 @@
-html {
-  scroll-behavior: smooth;
-  overscroll-behavior-y: none;
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ammar Arief</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <link rel="stylesheet" href="index-styles.css" />
+</head>
+
+<body>
+    <section class="first-section">
+        <div class="header">
+            <h1 id="welcome-text" class="dark-font">WELCOME</h1>
+        </div>
+    </section>
+    <section class="second-section">
+        <div class="second-parent">
+            <div class="second-first-child">
+                <div class="second-text left-align-column" id="second-text">
+                    <h3 class="light-font wfit-content">
+                        Hello! I'm <span class="jazmin">Ammar</span>.
+                    </h3>
+                    <h3 class="light-font wfit-content">I'm a front-end developer.</h3>
+                </div>
+            </div>
+            <div class="second-second-child">
+                <div class="third-text right-align-column align-text-right" id="third-text">
+                    <h3 class="light-font">Well technically,</h3>
+                    <h3 class="light-font">I am still a student</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="third-section">
+        <div class="details-div"></div>
+        <div class="third-header">
+            <h2 class="dark-font jakarta" id="details-header">More About <span class="jazmin">Me</span></h2>
+            <div class="details-info center-column-column">
+                <div class="details-parent">
+                    <div class="details-item">
+                        <h4 class="dark-font">
+                            Diploma Student From <br />
+                            <span class="jazmin">Kolej Vokasional Kuala Selangor.</span>
+                        </h4>
+                        <h6 class="dark-font">
+                            Database Management System and Web Application Technology
+                        </h6>
+                    </div>
+                    <div class="images">
+                        <lord-icon src="https://cdn.lordicon.com/eeouelif.json" trigger="hover" colors="primary:#07090f,secondary:#07090f" style="width:24.7917vw;height:24.7917vw">
+                        </lord-icon>
+                    </div>
+                </div>
+                <div class="details-parent">
+                    <div class="images">
+                        <lord-icon src="https://cdn.lordicon.com/xirobkro.json" trigger="hover" colors="primary:#07090f,secondary:#07090f" style="width:24.7917vw;height:24.7917vw">
+                        </lord-icon>
+                    </div>
+                    <div class="details-item align-text-right">
+                        <h4 class="dark-font">
+                            Currently Interning At <br />
+                            <span class="jazmin">Bike Bear Sdn. Bhd.</span>
+                        </h4>
+                        <h6 class="dark-font">Web Developer Intern</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/smooth-scrollbar@8.6.3/dist/smooth-scrollbar.js"></script>
+    <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    if (window.innerWidth <= 767) {
+    // Adjust the animation for small screens
+    gsap.to("#welcome-text", {
+        x: "-100%", // Adjusted translation
+        scale: 10,  // Adjusted scale
+        scrollTrigger: {
+            trigger: ".first-section",
+            start: "top",
+            end: "top 5%",
+            scrub: 0.5,
+            
+            toggleActions: "play reverse play reverse",
+        },
+    });
+} else {
+    // Original animation for larger screens
+    gsap.to("#welcome-text", {
+        x: "-300%",
+        scale: 20,
+        scrollTrigger: {
+            trigger: ".first-section",
+            start: "10%",
+            end: "30%",
+            scrub: 0.5,
+            
+            toggleActions: "play reverse play reverse",
+        },
+    });
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
+    gsap.to(".second-section", {
+        backgroundImage: "url('srcs/2.png')",
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".second-second-child",
+            start: "1%",
+            end: "1.2%",
+            scrub: 0,
+            
+            toggleActions: "play none none reverse",
+        },
+    });
 
-body {
-  overflow-x: hidden;
-}
+    gsap.to("#second-text", {
+        opacity: 0,
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".second-first-child",
+            start: "bottom 80%",
+            end: "bottom",
+            scrub: 0.2,
+            
+            toggleActions: "play none none reverse",
+        },
+    });
 
-:root {
-  --background-light: #f4f3ee;
-  --background-dark: #07090f;
-  --font-light: #f4f3ee;
-  --font-dark: #07090f;
-  --accent-color:#804E49;
-  --side-padding-outer: 6.3542vw;
-  --side-padding-inner: 1.0417vw;
-}
+    gsap.to("#second-text", {
+        x: "0px",
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".second-first-child",
+            start: "-90%",
+            end: "-80%",
+            scrub: 1,
+            
+            toggleActions: "play none none reverse",
+        },
+    });
 
-/*FONT & STUFF*/
+    gsap.to("#third-text", {
+        opacity: 1,
+        x: "0px",
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".second-second-child",
+            start: "top 50%",
+            end: "top 20%",
+            scrub: 2,
+            
+            toggleActions: "play reverse play reverse",
+        },
+    });
 
-.jazmin {
-  font-family: "jazmin";
-  font-style: italic;
-}
+    gsap.to(".details-div", {
+        clipPath: "circle(50% at 50% 50%)",
+        scale: 2,
+        escape: true,
+        scrollTrigger: {
+            trigger: ".third-section",
+            start: "1%",
+            end: "10%",
+            scrub: 1,
+            
+            toggleActions: "play reverse play reverse",
+        },
+    });
 
-.jakarta {
-  font-family: "Plus Jakarta Sans" !important;
-}
+    gsap.to("#details-header", {
+        y: "0%",
+        scrollTrigger: {
+            trigger: ".third-header",
+            start: "-100%",
+            end: "-20%",
+            scrub: 0.5,
+            
+            toggleActions: "play none none reverse",
+        },
+    });
+    </script>
+</body>
 
-@font-face {
-  font-family: "jazmin";
-  src: url("srcs/JazminAlt-SemiBold.ttf");
-}
-
-h1,
-h2 {
-  font-family: "jazmin";
-}
-
-h3,
-h4,
-h5 {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: bold;
-}
-
-h6,
-p,
-body {
-  font-family: "Plus Jakarta Sans", sans-serif;
-}
-
-h1 {
-  font-size: 15.625vw;
-}
-
-.big-text {
-  font-size: 15.625vw;
-}
-
-h2 {
-  font-size: 5.2083vw;
-}
-
-h3 {
-  font-size: 4.1667vw;
-}
-
-h4 {
-  font-size: 2.6042vw;
-}
-
-h5 {
-  font-size: 1.875vw;
-}
-
-h6 {
-  font-size: 1.25vw;
-}
-
-p,
-body {
-  font-size: 1.25vw;
-}
-
-.dark-font {
-  color: var(--font-dark) !important;
-}
-
-.light-font {
-  color: var(--font-light) !important;
-}
-
-/*position & stuff*/
-.center-column-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
-
-.center-column-column {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.left-align-column {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-}
-
-.left-align-row {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
-}
-
-.right-align-column {
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-}
-
-.right-align-row {
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: row;
-}
-
-.wfit-content {
-  width: fit-content;
-}
-
-.hfit-content {
-  height: fit-content;
-}
-
-.align-text-left {
-  text-align: left;
-}
-
-.align-text-right {
-  text-align: right;
-}
-
-/*FIRST SECTION*/
-.first-section {
-  background-color: var(--background-light);
-  height: 150vh;
-  
-  overflow: hidden;
-}
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-h1#welcome-text {
-  position: fixed;
-}
-
-/*second section*/
-.second-section {
-  height: 200vh;
-  position: relative;
-  z-index: 2;
-  background-image: url(srcs/1.png);
-  background-attachment: fixed;
-  background-position: center right;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: background-image 0.5s cubic-bezier(0.39, -0.69, 0.61, 0.96);
-}
-
-.second-parent {
-  padding-inline: var(--side-padding-outer);  
-  display: flex;
-  flex-direction: column;
-}
-
-.second-first-child {
-  height: 100vh;
-
-  & > .left-align-column {
-    width: 65%;
-  }
-}
-
-
-.second-text {
-  position: sticky;
-  top: 40%;
-  z-index: 3;
-}
-
-.second-image {
-  display: flex;
-    justify-content: center;
-    flex-direction: column;
-    height: 100%;
-    z-index: 0;
-    align-items: flex-end;
-
-  & > img {
-    width: 200px;
-  }
-}
-
-.second-second-child {
-  height: 100vh;
-}
-
-.third-text {
-  position: sticky;
-  top: 40%;
-}
-
-#second-text {
-  transform: translateX(-5000px);
-}
-
-#third-text {
-  opacity: 0;
-  transform: translateX(500px);
-}
-
-/*third section*/
-.third-section {
-  height: 300vh;
-  background-color: var(--background-dark);
-  position: relative;
-  z-index: 2;
-}
-
-.details-div {
-  background-color: var(--background-light);
-  clip-path: circle(0% at 50% 50%);
-  transform: scale(0);
-  opacity: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: sticky;
-  top: 2px;
-  width: 100vw;
-  height: 100vh;
-}
-
-.third-header {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-  top: 50vh;
-}
-
-#details-header {
-  transform: translateY(-650%);
-  transition: translate 0.5s ease-in-out 5s;
-}
-.details-info.center-column-row {
-  justify-content: space-between !important;
-}
-
-.details-info {
-  padding-inline: var(--side-padding-outer);
-}
-
-.details-parent {
-  display: flex;
-  flex-direction: row;
-  width: calc(90vw - var(--side-padding-outer));
-  justify-content: space-between;
-  align-items: center;
-}
-
-.details-item {
-  width: 60vw;
-  height: 20vw;
-  padding: var(--side-padding-inner);
-  border: 0.2604vw solid var(--background-dark);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 2.3438vw;
-}
+</html>
