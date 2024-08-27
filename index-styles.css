@@ -158,7 +158,6 @@ body {
 .first-section {
   background-color: var(--background-light);
   height: 150vh;
-  
   overflow: hidden;
 }
 .header {
@@ -314,10 +313,28 @@ h1#welcome-text {
 @media (max-width: 767px) {
   body {
     overflow-x: hidden;
-    max-width: 767px;
+    max-width: 100vw;
+  }
+
+  .first-section {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .header {
+    overflow: hidden;
+  }
+
+  #welcome-text {
+    overflow: hidden;
   }
   
   .second-section {
     background-size: contain;
+    overflow: hidden;
+  }
+
+  .third-text {
+    top: 100%;
   }
 }
