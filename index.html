@@ -79,25 +79,24 @@
     <script>
     gsap.registerPlugin(ScrollTrigger);
 
-    if (window.innerWidth <= 767) {
+    if (window.outerWidth <= 767) {
     // Adjust the animation for small screens
     gsap.to("#welcome-text", {
-        x: "-100%", // Adjusted translation
-        scale: 10,  // Adjusted scale
+        x: "-423%", // Adjusted translation
+        scale: 60,  // Adjusted scale
         scrollTrigger: {
             trigger: ".first-section",
-            start: "top",
-            end: "top 5%",
+            start: "1%",
+            end: "1%",
             scrub: 0.5,
-            
             toggleActions: "play reverse play reverse",
         },
     });
 } else {
     // Original animation for larger screens
     gsap.to("#welcome-text", {
-        x: "-300%",
-        scale: 20,
+        x: "-400%",
+        scale: 60,
         scrollTrigger: {
             trigger: ".first-section",
             start: "10%",
@@ -108,6 +107,16 @@
         },
     });
 }
+
+    gsap.to("#welcome-text", {
+        display: "none",
+        scrollTrigger: {
+            trigger: ".second-section",
+            start: "10%",
+            end: "10.1%",
+            toggleActions: "play reverse play reverse"
+        },
+    })
 
     gsap.to(".second-section", {
         backgroundImage: "url('srcs/2.png')",
