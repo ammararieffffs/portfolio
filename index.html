@@ -79,17 +79,35 @@
     <script>
     gsap.registerPlugin(ScrollTrigger);
 
+    if (window.innerWidth <= 767) {
+    // Adjust the animation for small screens
     gsap.to("#welcome-text", {
-        x: "-400%",
-        scale: 60,
+        x: "-100%", // Adjusted translation
+        scale: 10,  // Adjusted scale
+        scrollTrigger: {
+            trigger: ".first-section",
+            start: "top",
+            end: "top 5%",
+            scrub: 0.5,
+            
+            toggleActions: "play reverse play reverse",
+        },
+    });
+} else {
+    // Original animation for larger screens
+    gsap.to("#welcome-text", {
+        x: "-300%",
+        scale: 20,
         scrollTrigger: {
             trigger: ".first-section",
             start: "10%",
             end: "30%",
             scrub: 0.5,
+            
             toggleActions: "play reverse play reverse",
         },
     });
+}
 
     gsap.to(".second-section", {
         backgroundImage: "url('srcs/2.png')",
@@ -99,6 +117,7 @@
             start: "1%",
             end: "1.2%",
             scrub: 0,
+            
             toggleActions: "play none none reverse",
         },
     });
@@ -111,6 +130,7 @@
             start: "bottom 80%",
             end: "bottom",
             scrub: 0.2,
+            
             toggleActions: "play none none reverse",
         },
     });
@@ -123,6 +143,7 @@
             start: "-90%",
             end: "-80%",
             scrub: 1,
+            
             toggleActions: "play none none reverse",
         },
     });
@@ -136,6 +157,7 @@
             start: "top 50%",
             end: "top 20%",
             scrub: 2,
+            
             toggleActions: "play reverse play reverse",
         },
     });
@@ -149,6 +171,7 @@
             start: "1%",
             end: "10%",
             scrub: 1,
+            
             toggleActions: "play reverse play reverse",
         },
     });
@@ -160,6 +183,7 @@
             start: "-100%",
             end: "-20%",
             scrub: 0.5,
+            
             toggleActions: "play none none reverse",
         },
     });
