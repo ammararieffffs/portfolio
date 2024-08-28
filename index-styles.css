@@ -11,7 +11,7 @@ html {
 body {
   overflow-x: hidden;
   max-width: 100vw;
-  background: var(--background-light);
+  background: var(--background-dark);
 }
 
 :root {
@@ -291,7 +291,7 @@ h1#welcome-text {
 .details-item {
   width: 60vw;
   height: 20vw;
-  padding: var(--side-padding-inner);
+  padding-inline: var(--side-padding-outer);
   border: 0.2604vw solid var(--background-dark);
   display: flex;
   flex-direction: column;
@@ -316,6 +316,39 @@ h1#welcome-text {
     max-width: 100vw;
   }
 
+  h1 {
+    font-size: 2.5rem; /* 35px */
+  }
+
+  .big-text {
+    font-size: 2.5rem; /* 35px */
+  }
+
+  h2 {
+    font-size: 2rem; /* 28px */
+  }
+
+  h3 {
+    font-size: 1.75rem; /* 24.5px */
+  }
+
+  h4 {
+    font-size: 1.5rem; /* 21px */
+  }
+
+  h5 {
+    font-size: 1.25rem; /* 17.5px */
+  }
+
+  h6 {
+    font-size: 1rem; /* 14px */
+  }
+
+  p,
+  body {
+    font-size: 1rem; /* 14px */
+  }
+
   .first-section {
     height: 100vh;
     overflow: hidden;
@@ -336,5 +369,27 @@ h1#welcome-text {
 
   .third-text {
     top: 100%;
+  }
+
+  #details-header {
+    transform: translateY(-3700%);
+  }
+
+  .details-parent {
+    flex-direction: column;
+  }
+
+  .details-info {
+    gap: 20px;
+  }
+
+  .details-item {
+    height: 230px;
+    padding: var(--side-padding-outer);
+    border-width: 3px;
+  }
+
+  lord-icon {
+    display: none;
   }
 }
