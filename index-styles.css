@@ -15,11 +15,11 @@ body {
 }
 
 :root {
-  --background-light: #f4f3ee;
-  --background-dark: #07090f;
-  --font-light: #f4f3ee;
-  --font-dark: #07090f;
-  --accent-color:#804E49;
+  --background-light: white;
+  --background-dark: black;
+  --font-light: white;
+  --font-dark: black;
+  --accent-color: #804e49;
   --side-padding-outer: 6.3542vw;
   --side-padding-inner: 1.0417vw;
 }
@@ -185,7 +185,7 @@ h1#welcome-text {
 }
 
 .second-parent {
-  padding-inline: var(--side-padding-outer);  
+  padding-inline: var(--side-padding-outer);
   display: flex;
   flex-direction: column;
 }
@@ -198,7 +198,6 @@ h1#welcome-text {
   }
 }
 
-
 .second-text {
   position: sticky;
   top: 40%;
@@ -207,11 +206,11 @@ h1#welcome-text {
 
 .second-image {
   display: flex;
-    justify-content: center;
-    flex-direction: column;
-    height: 100%;
-    z-index: 0;
-    align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  z-index: 0;
+  align-items: flex-end;
 
   & > img {
     width: 200px;
@@ -245,17 +244,33 @@ h1#welcome-text {
 }
 
 .details-div {
-  background-color: var(--background-light);
+  /* background-color: var(--background-light); */
+  background: #fff;
   clip-path: circle(0% at 50% 50%);
   transform: scale(0);
   opacity: 1;
+  /* position: sticky;
+  top: 0.1042vw; */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50%-50%;
+  width: 100vw;
+  height: 100vh;
+  mix-blend-mode: difference;
+  z-index: 1;
+}
+
+.details-container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: sticky;
-  top: 0.1042vw;
-  width: 100vw;
+  overflow: hidden;
   height: 100vh;
+  width: 100%;
+  background: var(--background-dark);
+  z-index: 0;
 }
 
 .third-header {
@@ -264,12 +279,22 @@ h1#welcome-text {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  /* height: 100vh; */
   top: 50vh;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--background-dark);
+    filter: invert(1);
+    z-index: -1;
+  }
 }
 
 #details-header {
-  transform: translateY(-650%);
+  transform: translateY(0%);
   transition: translate 0.5s ease-in-out 5s;
 }
 .details-info.center-column-row {
@@ -278,6 +303,7 @@ h1#welcome-text {
 
 .details-info {
   padding-inline: var(--side-padding-outer);
+  z-index: 1;
 }
 
 .details-parent {
@@ -304,7 +330,7 @@ h1#welcome-text {
     overflow-x: hidden;
     max-width: 100vw;
   }
-  
+
   .second-section {
     background-size: contain;
   }
@@ -361,18 +387,14 @@ h1#welcome-text {
   #welcome-text {
     overflow: hidden;
   }
-  
+
   .second-section {
     background-size: contain;
     overflow: hidden;
   }
 
   .third-text {
-    top: 100%;
-  }
-
-  #details-header {
-    transform: translateY(-2000%);
+    top: 80%;
   }
 
   .details-parent {
