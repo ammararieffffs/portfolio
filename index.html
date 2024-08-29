@@ -39,9 +39,12 @@
         </div>
     </section>
     <section class="third-section">
-        <div class="details-div"></div>
         <div class="third-header">
-            <h2 class="dark-font jakarta" id="details-header">More About <span class="jazmin">Me</span></h2>
+            <div class="details-container">
+                <div class="details-div"></div>
+                <h2 class="light-font jakarta" id="details-header">More About <span class="jazmin">Me</span></h2>
+            </div>
+           
             <div class="details-info center-column-column">
                 <div class="details-parent">
                     <div class="details-item">
@@ -114,11 +117,26 @@
             trigger: ".second-section",
             start: "10%",
             end: "50%",
-            markers: true,
             toggleActions: "play none none reverse"
         },
     })
 
+    if (window.outerWidth <= 767) {
+    // Adjust the animation for small screens
+    gsap.to(".second-section", {
+        backgroundImage: "url('srcs/2.png')",
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".second-second-child",
+            start: "-10%",
+            end: "-9%",
+            scrub: 0,
+            markers: true,
+            toggleActions: "play none none reverse",
+        },
+    });
+} else {
+    // Original animation for larger screens
     gsap.to(".second-section", {
         backgroundImage: "url('srcs/2.png')",
         ease: "none",
@@ -131,6 +149,7 @@
             toggleActions: "play none none reverse",
         },
     });
+}
 
     gsap.to("#second-text", {
         opacity: 0,
@@ -187,12 +206,13 @@
     });
 
     gsap.to("#details-header", {
-        y: "0%",
+        y: "345%",
         scrollTrigger: {
             trigger: ".third-header",
-            start: "-100%",
-            end: "-20%",
+            start: "0%",
+            end: "50%",
             scrub: 0.5,
+            markers: true,
             toggleActions: "play none none reverse",
         },
     });
