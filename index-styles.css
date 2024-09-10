@@ -28,7 +28,6 @@ body {
 
 .jazmin {
   font-family: "jazmin";
-  font-style: italic;
 }
 
 .jakarta {
@@ -324,6 +323,23 @@ h1#welcome-text {
   justify-content: center;
   border-radius: 2.3438vw;
 }
+
+.fourth-section {
+  margin-top: 5vh;
+  position: relative;
+  padding-inline: var(--side-padding-outer);
+  height: 150vh;
+  z-index: 3;
+}
+
+.hobby {
+
+  & > .dark-font {
+    height: 10vh;
+    transform: translateX(calc(100% - 6.3542vw));
+  }
+}
+
 
 @media (max-width: 1239px) {
   body {
